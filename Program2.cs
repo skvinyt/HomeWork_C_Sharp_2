@@ -64,3 +64,60 @@
 //     Console.Write($"{array[i]} ");
 // }
 // Console.ReadKey(true);
+
+//Задача 64
+// Console.Clear();
+// Console.Write("Введите число N: "); 
+// int N = Convert.ToInt32(Console.ReadLine()); 
+
+// for (int i = N; i >= 1; i--) { 
+//     Console.Write(i + " "); 
+// } 
+
+//Задача 66
+// Console.Clear();
+// Console.Write("Введите число M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+
+// Console.Write("Введите число N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// SumFromMToN(m, n);
+
+// void SumFromMToN(int m, int n) {
+//     Console.Write(SumMN(m - 1, n));
+// }
+
+// int SumMN(int m, int n) {
+//     int res = m;
+//     if (m == n)
+//         return 0;
+//     else {
+//         m++;
+//         res = m + SumMN(m, n);
+//         return res;
+//     }
+// }
+
+//Задача 68
+Console.Clear();
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+
+int functionAkkerman = Ack(m, n);
+
+Console.Write($"Функция Аккермана = {functionAkkerman} ");
+
+int Ack(int m, int n)
+{
+  if (m == 0) return n + 1;
+  else if (n == 0) return Ack(m - 1, 1);
+  else return Ack(m - 1, Ack(m, n - 1));
+}
+
+int InputNumbers(string input) 
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
+}
